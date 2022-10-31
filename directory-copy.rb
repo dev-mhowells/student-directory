@@ -36,11 +36,16 @@ def print_header
 end
 
 def print(names)
-  names.each_with_index do |student, index|
-    if student[:name][0] == 'b'&& student[:name].length < 12
-      puts "#{index + 1}. #{student[:name]} (#{student[:cohort]} cohort)"
-    end
-  end
+  # names.each_with_index do |student, index|
+  #   if student[:name][0] == 'b'&& student[:name].length < 12
+  #     puts "#{index + 1}. #{student[:name]} (#{student[:cohort]} cohort)"
+  #   end
+  # end
+  count = 0
+  while count < names.length do
+    puts "#{count + 1}. #{names[count][:name]} (#{names[count][:cohort]} cohort)"
+    count += 1
+  end  
 end
 
 def print_footer(names)
