@@ -1,17 +1,17 @@
 #first we print the list of students
-students = [
-{name: "Dr. Hanibal Lecter", cohort: :november},
-{name: "Darth Vader", cohort: :november},
-{name: "Nurse Ratched", cohort: :november},
-{name: "Michael Corleone", cohort: :november},
-{name: "Alex DeLarge", cohort: :november},
-{name: "The Wicked Witch of the West", cohort: :november},
-{name: "Terminator", cohort: :november},
-{name: "Freddy Kreger", cohort: :november},
-{name: "The Joker", cohort: :november},
-{name: "Jeoffrey Baratheon", cohort: :november},
-{name: "Norman Bates", cohort: :november}
-]
+# students = [
+# {name: "Dr. Hanibal Lecter", cohort: :november},
+# {name: "Darth Vader", cohort: :november},
+# {name: "Nurse Ratched", cohort: :november},
+# {name: "Michael Corleone", cohort: :november},
+# {name: "Alex DeLarge", cohort: :november},
+# {name: "The Wicked Witch of the West", cohort: :november},
+# {name: "Terminator", cohort: :november},
+# {name: "Freddy Kreger", cohort: :november},
+# {name: "The Joker", cohort: :november},
+# {name: "Jeoffrey Baratheon", cohort: :november},
+# {name: "Norman Bates", cohort: :november}
+# ]
 
 def input_students
     puts "Please enter the names of the students"
@@ -22,7 +22,7 @@ def input_students
     name = gets.chomp
     
     while !name.empty? do
-        students << {name: name, cohort: :november}
+        students << {name: name, cohort: :november, hobby: :learning}
         puts "Now we have #{students.count} students"
         name = gets.chomp
     end
@@ -43,7 +43,8 @@ def print(names)
   # end
   count = 0
   while count < names.length do
-    puts "#{count + 1}. #{names[count][:name]} (#{names[count][:cohort]} cohort)"
+    puts "#{count + 1}. #{names[count][:name]} (#{names[count][:cohort]} cohort) 
+    likes #{names[count][:hobby]}"
     count += 1
   end  
 end
