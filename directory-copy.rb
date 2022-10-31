@@ -37,7 +37,7 @@ end
 
 def print(names)
   names.each_with_index do |student, index|
-    if student[:name][0] == 'b'
+    if student[:name][0] == 'b'&& student[:name].length < 12
       puts "#{index + 1}. #{student[:name]} (#{student[:cohort]} cohort)"
     end
   end
