@@ -43,8 +43,7 @@ def print(names)
   # end
   count = 0
   while count < names.length do
-    puts "#{count + 1}. #{names[count][:name]} (#{names[count][:cohort]} cohort) 
-    likes #{names[count][:hobby]}"
+    puts "#{count + 1}. #{names[count][:name]} (#{names[count][:cohort]} cohort)".center(100)
     count += 1
   end  
 end
