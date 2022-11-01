@@ -1,18 +1,3 @@
-#first we print the list of students
-# students = [
-# {name: "Dr. Hanibal Lecter", cohort: :november},
-# {name: "Darth Vader", cohort: :november},
-# {name: "Nurse Ratched", cohort: :november},
-# {name: "Michael Corleone", cohort: :november},
-# {name: "Alex DeLarge", cohort: :november},
-# {name: "The Wicked Witch of the West", cohort: :november},
-# {name: "Terminator", cohort: :november},
-# {name: "Freddy Kreger", cohort: :november},
-# {name: "The Joker", cohort: :november},
-# {name: "Jeoffrey Baratheon", cohort: :november},
-# {name: "Norman Bates", cohort: :november}
-# ]
-
 @students = []
 
 def input_students
@@ -50,6 +35,7 @@ end
 def print_menu
     puts "1. Input the students"
     puts "2. Show the students"
+    puts "3. Save the list to students.csv"
     puts "9. Exit"
 end
 
@@ -65,11 +51,13 @@ def process(selection)
         @students = input_students
     when "2"
         show_students
+    when "3"
+        save_students
     when "9"
         exit
     else
         puts "I don't know what you meant, try again"
-        end
+    end
 end
 
 def interactive_menu
@@ -80,9 +68,16 @@ def interactive_menu
     end
 end
 
-# students = input_students
+def save_students
+    # open file to write to
+    file = File.open("students.csv", "w")
+    
+    @students.each do |student|
+        student_data = [student[:name], student[:cohort]]
+        csv_line = student_data.join(",")
+        file.puts csv_line
+    end
+    file.close
+end
 
-# print_header
-# print(students)
-# print_footer(students)
 interactive_menu
