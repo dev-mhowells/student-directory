@@ -20,9 +20,11 @@ def input_students
     students = []
     
     name = gets.chomp
+    puts "what is #{name}'s cohort?"
+    cohort = gets.chomp
     
     while !name.empty? do
-        students << {name: name, cohort: :november, hobby: :learning}
+        students << {name: name, cohort: cohort, hobby: :learning}
         puts "Now we have #{students.count} students"
         name = gets.chomp
     end
