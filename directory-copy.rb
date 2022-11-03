@@ -19,7 +19,7 @@ def input_students
     
     students = []
     
-    name = gets.chomp
+    name = gets.chop
     # puts "what is #{name}'s cohort?"
     # cohort = gets.chomp
     
@@ -31,7 +31,7 @@ def input_students
         # cohort = gets.chomp
     end
     
-    puts names_cohorts
+    # puts names_cohorts
     
     students
 end
